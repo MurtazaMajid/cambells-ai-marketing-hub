@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap');
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-serif: 'DM Serif Display', serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--accent-orange);
+  --color-primary-foreground: oklch(1 0 0);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--surface-2);
+  --color-muted-foreground: var(--muted);
+  --color-accent: var(--surface-2);
+  --color-accent-foreground: var(--foreground);
+  --color-destructive: var(--red);
+  --color-destructive-foreground: oklch(1 0 0);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--border-strong);
+  --color-ring: var(--accent-orange);
+  --color-success: var(--green);
+  --color-warn: var(--yellow);
+  --color-info: var(--blue);
+  --color-orange: var(--accent-orange);
+  --color-orange-2: var(--accent-orange-2);
+  --color-red: var(--red);
+  --color-green: var(--green);
+  --color-blue: var(--blue);
+  --color-yellow: var(--yellow);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Hex from spec converted to oklch */
+  --background: oklch(0.16 0.012 264);            /* #0a0c10 */
+  --foreground: oklch(0.94 0.01 80);              /* #f0ede8 */
+  --surface: oklch(0.19 0.012 264);               /* #111318 */
+  --surface-2: oklch(0.23 0.013 264);             /* #181c24 */
+  --border: oklch(1 0 0 / 7%);
+  --border-strong: oklch(1 0 0 / 12%);
+  --muted: oklch(0.58 0.012 264);                 /* #7a7d87 */
+  --accent-orange: oklch(0.68 0.16 42);           /* #e8673a */
+  --accent-orange-2: oklch(0.78 0.13 60);         /* #f0a060 */
+  --green: oklch(0.72 0.13 165);                  /* #3db88a */
+  --red: oklch(0.65 0.18 25);                     /* #e05555 */
+  --blue: oklch(0.65 0.12 247);                   /* #4a90d9 */
+  --yellow: oklch(0.81 0.13 85);                  /* #e8b84b */
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { background: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); font-size: 14px; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: oklch(1 0 0 / 0.1); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: oklch(1 0 0 / 0.2); }
+}
+
+@layer components {
+  .card-surface { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; }
+  .kpi-accent::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 2px; }
+  .badge-soft { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 6px; font-size: 11px; font-weight: 500; letter-spacing: 0.02em; }
+  .nav-link { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; color: var(--muted); font-size: 13.5px; transition: all .15s; }
+  .nav-link:hover { background: oklch(1 0 0 / 0.05); color: var(--foreground); }
+  .nav-link.is-active { background: color-mix(in oklab, var(--accent-orange) 18%, transparent); color: var(--accent-orange); font-weight: 500; }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .pulse-dot { animation: pulse-dot 2s infinite; }
+}
