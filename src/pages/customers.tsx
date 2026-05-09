@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router-shim";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { api, parseFavoriteItems, type Customer, type Risk, type Segment } from "@/lib/api";

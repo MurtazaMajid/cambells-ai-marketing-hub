@@ -1,4 +1,4 @@
-export const API_BASE = "https://churn-prediction-production-a6ad.up.railway.app";
+export const API_BASE = "https://campbells-ai-and-marketing-hub-1.onrender.com";
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {
@@ -101,6 +101,13 @@ export interface PipelineResponse {
   risk_level: Risk;
   tier: string;
   discount_offered: string;
+  profile: {
+    spending_tier: string;
+    time_preference: string;
+    food_preference: string;
+    drink_vs_food: string;
+    is_flight_lover: boolean;
+  };
   absa: {
     aspects: string[];
     sentiments: string[];
@@ -111,6 +118,14 @@ export interface PipelineResponse {
     sms: string;
     email: { subject: string; body: string };
     app_notification: string;
+  };
+  email_result: {
+    success: boolean;
+    skipped?: boolean;
+    reason?: string;
+    email_id?: string;
+    to?: string;
+    error?: string;
   };
 }
 
@@ -217,3 +232,26 @@ export const api = {
     triplets: { aspect: string; opinion: string; sentiment: string }[];
   }>("/api/sentiment", { method: "POST", body: JSON.stringify({ review }) }),
 };
+
+// ─────────────────────────────────────────────
+// Re-engagement batch
+// ─────────────────────────────────────────────
+export interface ReengagementResult {
+  customer_id: string;
+  email: string;
+  real_email: boolean;
+  segment: string;
+  sms: string;
+  email_subject: string;
+  email_sent: boolean;
+  email_id?: string;
+}
+
+export interface ReengagementResponse {
+  total_processed: number;
+  emails_sent: number;
+  results: ReengagementResult[];
+}
+
+export const sendReengagementBatch = (limit = 10) =>
+  request<ReengagementResponse>(`/api/send-reengagement-batch?limit=${limit}`, { method: "POST" });

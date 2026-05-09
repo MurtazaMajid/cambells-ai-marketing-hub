@@ -47,20 +47,19 @@
 
 :root {
   --radius: 0.625rem;
-  /* Hex from spec converted to oklch */
-  --background: oklch(0.16 0.012 264);            /* #0a0c10 */
-  --foreground: oklch(0.94 0.01 80);              /* #f0ede8 */
-  --surface: oklch(0.19 0.012 264);               /* #111318 */
-  --surface-2: oklch(0.23 0.013 264);             /* #181c24 */
+  --background: oklch(0.16 0.012 264);
+  --foreground: oklch(0.94 0.01 80);
+  --surface: oklch(0.19 0.012 264);
+  --surface-2: oklch(0.23 0.013 264);
   --border: oklch(1 0 0 / 7%);
   --border-strong: oklch(1 0 0 / 12%);
-  --muted: oklch(0.58 0.012 264);                 /* #7a7d87 */
-  --accent-orange: oklch(0.68 0.16 42);           /* #e8673a */
-  --accent-orange-2: oklch(0.78 0.13 60);         /* #f0a060 */
-  --green: oklch(0.72 0.13 165);                  /* #3db88a */
-  --red: oklch(0.65 0.18 25);                     /* #e05555 */
-  --blue: oklch(0.65 0.12 247);                   /* #4a90d9 */
-  --yellow: oklch(0.81 0.13 85);                  /* #e8b84b */
+  --muted: oklch(0.58 0.012 264);
+  --accent-orange: oklch(0.68 0.16 42);
+  --accent-orange-2: oklch(0.78 0.13 60);
+  --green: oklch(0.72 0.13 165);
+  --red: oklch(0.65 0.18 25);
+  --blue: oklch(0.65 0.12 247);
+  --yellow: oklch(0.81 0.13 85);
 }
 
 @layer base {

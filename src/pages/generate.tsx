@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "@/lib/router-shim";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { api, parseFavoriteItems, type Customer, type PipelineResponse } from "@/lib/api";

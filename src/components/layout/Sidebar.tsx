@@ -1,5 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
-import { LayoutGrid, Users, Smile, MessageSquare, Sparkles, BarChart3 } from "lucide-react";
+import { Link, useLocation } from "@/lib/router-shim";
+import { LayoutGrid, Users, Smile, MessageSquare, Sparkles, BarChart3, Send } from "lucide-react";
 
 const nav = [
   { section: "Analytics", items: [
@@ -11,6 +11,7 @@ const nav = [
   { section: "Marketing", items: [
     { to: "/messages", label: "Messages", icon: MessageSquare, badge: "10" },
     { to: "/generate", label: "Generate", icon: Sparkles },
+    { to: "/reengage", label: "Re-engage", icon: Send, badge: "AUTO" },
   ]},
 ];
 
