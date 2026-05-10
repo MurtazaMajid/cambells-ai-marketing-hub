@@ -13,7 +13,7 @@ export function Topbar({ title, subtitle, actions }: TopbarProps) {
       </div>
       <div className="flex items-center gap-3">
         <div className="text-[11px] text-muted-foreground bg-surface-2 px-2.5 py-1 rounded-md font-mono">
-          <span className="text-green mr-1">●</span>churn-prediction-production-a6ad.up.railway.app
+          <span className="text-green mr-1">●</span>campbells-ai-and-marketing-hub-1.onrender.com
         </div>
         <div className="w-px h-5 bg-border-strong" />
         {actions}
