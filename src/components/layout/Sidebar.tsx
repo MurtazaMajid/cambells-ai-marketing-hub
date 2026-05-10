@@ -48,7 +48,7 @@ export function Sidebar() {
       </nav>
       <div className="px-4 py-4 border-t border-border">
         <span className="inline-block w-[7px] h-[7px] bg-green rounded-full mr-1.5 pulse-dot align-middle" />
-        <span className="text-[12px] text-muted-foreground">API Live · Railway</span>
+        <span className="text-[12px] text-muted-foreground">API Live · Render</span>
       </div>
     </aside>
   );
