@@ -1,4 +1,4 @@
-export const API_BASE = "https://gamingouclassed-campbell.hf.space";
+export const API_BASE = "https://murtazamajid-cambells.hf.space";
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {
